@@ -147,12 +147,12 @@ class conexaoSecretarias:
 
     def conectar_Sedi(self):
         # realiza a conexão no banco SIGA - Produção SEDI e retorna com os dados.
-        consultaComponentes = Conecta_Banco(host='10.6.62.95',user='powerbi',password='VYecctxUF7ytW!',port='3306',database='siga_producao')
+        consultaComponentes = Conecta_Banco(host=ipBanco,user=usuarioBanco,password=senhaBanco,port=portaBanco,database=ondeEstaSalvo)
         dados,nomeColuna = consultaComponentes.Analisar_sedi()
         self.__DataFrame_Excel(dados=dados,nomeColuna=nomeColuna)
 
     def conectar_Ser(self):
     # realiza a conexão no banco SIGA - Produção SEDI e retorna com os dados.
-        consultaComponentes = Conecta_Banco(host="127.0.0.1",user= "joao_sge",password="fK1ejcOIqvtz59yJnn1h",port="3306",database="c3siga")
+        consultaComponentes = Conecta_Banco(host=ipBanco,user=usuarioBanco,password=senhaBanco,port=portaBanco,database=ondeEstaSalvo)
         dados,nomeColuna = consultaComponentes.Analisar_ser()
         self.__DataFrame_Excel(dados=dados,nomeColuna=nomeColuna)
