@@ -66,7 +66,7 @@ class Conecta_Banco:
     #faz a leitura do .txt onde está o código sql SEDI e retorna a leitura.
     def __Analisa_ComponentesSEDI(self):
         try:
-            with open(r"C:\Users\jpaul\PycharmProjects\SERrelatorios\Querys\controleOfertaFrequenciaSEDI.txt", encoding= 'utf8') as arquivo:
+            with open(r".\Querys\controleOfertaFrequenciaSEDI.txt", encoding= 'utf8') as arquivo:
                 query = arquivo.read()
                 arquivo.close()
         except (FileNotFoundError,FileExistsError) as erro:
@@ -78,7 +78,7 @@ class Conecta_Banco:
     #faz a leitura do .txt onde está o código sql SEDI e retorna a leitura.
     def __Analisa_ComponentesSER(self):
         try:
-            with open(r"C:\Users\jpaul\PycharmProjects\SERrelatorios\Querys\controleOfertaFrequenciaSER.txt", encoding= 'utf8') as arquivo:
+            with open(r".\Querys\controleOfertaFrequenciaSER.txt", encoding= 'utf8') as arquivo:
                 query = arquivo.read()
                 arquivo.close()
         except (FileNotFoundError,FileExistsError) as erro:
@@ -104,13 +104,14 @@ class Conecta_Banco:
     #tenta realizar conexão via SSH
     def __Verifica_Conexao_SSH(self):
         #tenta realizar conexão via SSH com os dados pré estabelecidos
+        #Os dados foram modificados para preservar a conexão SSH
         try:
             ssh = paramiko.SSHClient()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            ssh.connect(hostname="siga.cotec.org.br",
-            port="51222",
-            username="joao_sge",
-            password="fK1ejcOIqvtz59yJnn1h")
+            ssh.connect(hostname=locaQueEstáConectado,
+            port=numeroPorta,
+            username=usuarioSSH,
+            password=senhaSSH)
         except:
             print("Verificar dados de conexão SSH")
             ssh = None
