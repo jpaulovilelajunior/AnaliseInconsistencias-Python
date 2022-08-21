@@ -15,4 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 Hello, this file is a way to analyze inconsistencies in the monitoring of school management that impact the goals related to accountability.
+
+
 Olá, esse arquivo é uma forma de analisar inconsistências no acompanhamento de gestão escolar que impactam nas metas relacionadas à prestação de contas.
